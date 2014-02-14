@@ -5,11 +5,13 @@
 
 ```bash
 $ bundle install
+```
 
 ## To run a local server
 
 ```bash
 $ rackup
+```
 
 ## Production
 
