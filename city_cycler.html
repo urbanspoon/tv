@@ -1,0 +1,36 @@
+<html>
+<head>
+    <style type="text/css">
+        body, html
+        {
+            margin: 0; padding: 0; height: 100%; overflow: hidden;
+        }
+
+        #content
+        {
+            position:absolute; left: 0; right: 0; bottom: 0; top: 0px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            var locations = [];
+            for(var i = 1; i < 375; i++) {
+                locations.push('http://www.urbanspoon.com/ph/' + i)
+                locations.push('http://www.urbanspoon.com/ph/' + i + '/?sort=date')
+            }
+            var len = locations.length;
+            var i = 0;
+            setInterval(function () {
+                go(locations[++i % len]);
+            }, 15000);
+        });
+
+        function go(loc){
+            document.getElementById('frame').src = loc;
+        };
+    </script>
+</head>
+<body>
+<iframe id="frame" width="100%" height="100%" frameborder="0" src="http://www.urbanspoon.com/ph/1" />
+</body>
+</html>
